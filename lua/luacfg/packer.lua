@@ -22,26 +22,41 @@ return require('packer').startup(function(use)
 	  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
 
-  use {
-  	'VonHeikemen/lsp-zero.nvim',
-  	branch = 'v2.x',
-	requires = {
-		-- LSP Support
-		{'neovim/nvim-lspconfig'},             -- Required
-		{                                      -- Optional
+--  use {
+--  	'VonHeikemen/lsp-zero.nvim',
+--  	branch = 'v2.x',
+--	requires = {
+--		-- LSP Support
+--		{'neovim/nvim-lspconfig'},             -- Required
+--		{                                      -- Optional
+--		'williamboman/mason.nvim',
+--		run = function()
+--			pcall(vim.cmd, 'MasonUpdate')
+--		end,
+--	},
+--	{'williamboman/mason-lspconfig.nvim'}, -- Optional
+--
+--	-- Autocompletion
+--	{'hrsh7th/nvim-cmp'},     -- Required
+--	{'hrsh7th/cmp-nvim-lsp'}, -- Required
+--	{'L3MON4D3/LuaSnip'},     -- Required
+--}
+--}
+
+    use('neovim/nvim-lspconfig')
+
+    use {                                      -- Optional
 		'williamboman/mason.nvim',
 		run = function()
 			pcall(vim.cmd, 'MasonUpdate')
 		end,
-	},
-	{'williamboman/mason-lspconfig.nvim'}, -- Optional
+	}
 
-	-- Autocompletion
-	{'hrsh7th/nvim-cmp'},     -- Required
-	{'hrsh7th/cmp-nvim-lsp'}, -- Required
-	{'L3MON4D3/LuaSnip'},     -- Required
-}
-}
+    use {'williamboman/mason-lspconfig.nvim'}
+
+    use('hrsh7th/nvim-cmp')     -- Required
+    use('hrsh7th/cmp-nvim-lsp') -- Required
+    use('L3MON4D3/LuaSnip')     -- Required
 
     use('tpope/vim-fugitive')
 
