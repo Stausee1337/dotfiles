@@ -11,8 +11,6 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-syn match   clydeLineComment      "\/\/.*" contains=@Spell
-syn region  clydeComment	   start="/\*"  end="\*/" contains=@Spell
 syn region  clydeString             start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=NONE
 syn region  clydeCharacter          start=+'+ skip=+\\\\\|\\'+ end=+'+ contains=NONE
 syn match clydeAnnotation         /@\w\+/
@@ -29,12 +27,12 @@ syn match clydeNumber /\v<0x[0-9a-fA-F]+>/
 syn keyword clydeOperator operator
 " syn keyword clydeRel extends generates labels
 syn keyword clydeRepeat while for
-syn keyword clydeStatement return break continue yeet
+syn keyword clydeStatement return break continue yeet yield
 syn keyword clydeStructure struct enum union
 syn keyword clydeVariable const var
 
 syn keyword clydeAtom module export
-syn match clydeDirective /\%(#scope\|#link\|#c_call\|#include\|#import\|#compiler_intrinsic\|#type\|#const\|#where\|#run\|#insert\|#expand\|#if\|#bitflags\|#assert\)/
+syn match clydeDirective /\%(#scope\|#link\|#c_call\|#include\|#import\|#compiler_intrinsic\|#type\|#const\|#where\|#run\|#insert\|#expand\|#if\|#bitflags\|#assert\|#infix\)/
 
 syntax match clydeType /\<[A-Z][a-zA-Z0-9]*[a-z][a-zA-Z0-9]*\>/
 " Include some common types also
@@ -48,6 +46,9 @@ syn keyword clydeRel inline
 syntax match clydeDelimiter /[(){}\[\],;:|<>]/
 syntax match clydePunct /[+\-\*/%&|=]/
 syn match clydePunct /=>\|==/
+
+syn match   clydeLineComment      "\/\/.*" contains=@Spell
+syn region  clydeComment	   start="/\*"  end="\*/" contains=@Spell
 
 hi def link clydeAtom		Constant
 hi def link clydeBoolean		Boolean
