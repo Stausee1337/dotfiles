@@ -6,7 +6,8 @@ vim.filetype.add {
         gn = 'gn',
         gni = 'gn',
         tq = 'torque',
-        jsi = 'jsi'
+        jsi = 'jsi',
+        rpc = 'qrpc'
     }
 }
 
@@ -15,4 +16,5 @@ vim.treesitter.language.register('c', 'c3')
 vim.treesitter.language.register('gn', 'gn')
 vim.treesitter.language.register('torque', 'torque')
 vim.treesitter.language.register('jsi', 'jsi')
+vim.treesitter.language.register('qrpc', 'qrpc')
 
