@@ -9,7 +9,7 @@ require'nvim-treesitter.configs'.setup {
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
   auto_install = true,
 
-  ignore_install = { "asm" },
+  ignore_install = { "asm", "idl" },
 
   highlight = {
     enable = true,

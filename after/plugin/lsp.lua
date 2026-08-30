@@ -1,8 +1,12 @@
 local lsp = vim.lsp;
 
 
-
-require('mason').setup({})
+require('mason').setup({
+    registries = {
+        "github:mason-org/mason-registry",
+        "github:Crashdummyy/mason-registry",
+    },
+})
 require('mason-lspconfig').setup({
   -- Replace the language servers listed here
   -- with the ones you want to install

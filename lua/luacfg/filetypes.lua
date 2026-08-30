@@ -7,7 +7,12 @@ vim.filetype.add {
         gni = 'gn',
         tq = 'torque',
         jsi = 'jsi',
-        rpc = 'qrpc'
+        rpc = 'qrpc',
+        axaml = 'axaml',
+    },
+    filename = {
+        ['Buildfile'] = 'custom-buildfile',
+        ['TODO'] = 'markdown'
     }
 }
 
@@ -17,4 +22,6 @@ vim.treesitter.language.register('gn', 'gn')
 vim.treesitter.language.register('torque', 'torque')
 vim.treesitter.language.register('jsi', 'jsi')
 vim.treesitter.language.register('qrpc', 'qrpc')
+vim.treesitter.language.register('xml', 'axaml')
+vim.treesitter.language.register('python', 'custom-buildfile')
 
